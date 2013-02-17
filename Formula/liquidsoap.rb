@@ -113,10 +113,21 @@ def inc_all?
   ARGV.include? '--with-all'
 end
 
+def use_github?
+  ARGV.include? '--use-github'
+end
+
 class Liquidsoap < Formula
-  url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
+  if use_github?
+    url 'https://github.com/savonet/liquidsoap/archive/f665cccf1e75cd97e82f337d6ffc333803492511.zip'
+    md5 '6bd4042e6b50a06f348f30ba7854e4bd'
+  else
+    url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
+    md5 'c3a05596056d1c3f256e9c2e00f4ff27'
+  end
+
   homepage 'http://liquidsoap.fm/'
-  md5 'c3a05596056d1c3f256e9c2e00f4ff27'
+
 
   unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion?
     onoe 'Sorry!'
