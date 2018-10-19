@@ -1,5 +1,7 @@
 # Homebrew-Liquidsoap
 
+[![GuardRails badge](https://badges.production.guardrails.io/moul/homebrew-liquidsoap.svg)](https://www.guardrails.io)
+
 [Homebrew][homebrewhome] Liquidsoap formula repository (**MacOSX only**)
 
 ## Requirements
